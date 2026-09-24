@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.14.0</Version>
+    <SymbolConfigObject version="4.7.0.0" runtimeid="3.5.22.10" libversion="4.6.0.0" compiler="3.5.22.0" lmm="3.5.22.10" profile="CODESYS V3.5 SP22 Patch 1+" settings="SupportOPCUA, EnableDirectIoAccess, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <ProjectInfo name="height_seperation_codesys" devicename="Device" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeArray name="T_ARRAY__0__1023__OF_DWORD" size="0" nativesize="4096" typeclass="Array" iecname="ARRAY [0..1023] OF DWORD" basetype="T_DWORD">
+      <ArrayDim minrange="0" maxrange="1023" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__0__2047__OF_WORD" size="0" nativesize="4096" typeclass="Array" iecname="ARRAY [0..2047] OF WORD" basetype="T_WORD">
+      <ArrayDim minrange="0" maxrange="2047" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__0__4095__OF_BYTE" size="0" nativesize="4096" typeclass="Array" iecname="ARRAY [0..4095] OF BYTE" basetype="T_BYTE">
+      <ArrayDim minrange="0" maxrange="4095" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__0__4095__OF_IecVarAccessLibrary_SymbolicVarsBase_DirectIOBits8" size="0" nativesize="4096" typeclass="Array" iecname="ARRAY [0..4095] OF IecVarAccessLibrary.SymbolicVarsBase.DirectIOBits8" basetype="T_DirectIOBits8">
+      <ArrayDim minrange="0" maxrange="4095" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__0__511__OF_LWORD" size="0" nativesize="4096" typeclass="Array" iecname="ARRAY [0..511] OF LWORD" basetype="T_LWORD">
+      <ArrayDim minrange="0" maxrange="511" />
+    </TypeArray>
+    <TypeUserDef name="T_DirectIOBits8" size="0" nativesize="1" typeclass="Userdef" pouclass="STRUCTURE" iecname="DirectIOBits8">
+      <UserDefElement iecname="x0" type="T_BIT_X_0" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="x1" type="T_BIT_X_1" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="x2" type="T_BIT_X_2" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="x3" type="T_BIT_X_3" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="x4" type="T_BIT_X_4" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="x5" type="T_BIT_X_5" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="x6" type="T_BIT_X_6" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="x7" type="T_BIT_X_7" byteoffset="0" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeSimple name="T_BIT_X_0" size="0" swapsize="0" typeclass="Bit" iecname="BIT" bitoffset="0" />
+    <TypeSimple name="T_BIT_X_1" size="0" swapsize="0" typeclass="Bit" iecname="BIT" bitoffset="1" />
+    <TypeSimple name="T_BIT_X_2" size="0" swapsize="0" typeclass="Bit" iecname="BIT" bitoffset="2" />
+    <TypeSimple name="T_BIT_X_3" size="0" swapsize="0" typeclass="Bit" iecname="BIT" bitoffset="3" />
+    <TypeSimple name="T_BIT_X_4" size="0" swapsize="0" typeclass="Bit" iecname="BIT" bitoffset="4" />
+    <TypeSimple name="T_BIT_X_5" size="0" swapsize="0" typeclass="Bit" iecname="BIT" bitoffset="5" />
+    <TypeSimple name="T_BIT_X_6" size="0" swapsize="0" typeclass="Bit" iecname="BIT" bitoffset="6" />
+    <TypeSimple name="T_BIT_X_7" size="0" swapsize="0" typeclass="Bit" iecname="BIT" bitoffset="7" />
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_BYTE" size="0" swapsize="0" typeclass="Byte" iecname="BYTE" />
+    <TypeSimple name="T_DWORD" size="0" swapsize="0" typeclass="DWord" iecname="DWORD" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeSimple name="T_LWORD" size="0" swapsize="0" typeclass="LWord" iecname="LWORD" />
+    <TypeSimple name="T_WORD" size="0" swapsize="0" typeclass="Word" iecname="WORD" />
+  </TypeList>
+  <NodeList>
+    <Node name="__MIO">
+      <Node name="InfoAreaSizeInput" type="T_DWORD" access="Read" />
+      <Node name="InfoAreaSizeMemory" type="T_DWORD" access="Read" />
+      <Node name="InfoAreaSizeOutput" type="T_DWORD" access="Read" />
+      <Node name="InfoBitWordAddressing" type="T_BOOL" access="Read" />
+      <Node name="InfoByteAddressing" type="T_BOOL" access="Read" />
+      <Node name="InfoWriteableInputs" type="T_BOOL" access="Read" />
+    </Node>
+    <Node name="Application">
+      <Node name="HS">
+        <Node name="Beam_7" type="T_BOOL" access="ReadWrite" />
+        <Node name="Beam_8" type="T_BOOL" access="ReadWrite" />
+        <Node name="Conv_Input" type="T_BOOL" access="ReadWrite" />
+        <Node name="Conv_Large" type="T_BOOL" access="ReadWrite" />
+        <Node name="Conv_Small" type="T_BOOL" access="ReadWrite" />
+        <Node name="E_Stop" type="T_BOOL" access="ReadWrite" />
+        <Node name="Factory_io_run" type="T_BOOL" access="ReadWrite" />
+        <Node name="Large_Box" type="T_BOOL" access="ReadWrite" />
+        <Node name="large_detect" type="T_BOOL" access="ReadWrite" />
+        <Node name="Small_Box" type="T_BOOL" access="ReadWrite" />
+        <Node name="small_detect" type="T_BOOL" access="ReadWrite" />
+        <Node name="Start_PB" type="T_BOOL" access="ReadWrite" />
+        <Node name="Stored_Type" type="T_INT" access="ReadWrite" />
+        <Node name="System_Run" type="T_BOOL" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>

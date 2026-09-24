@@ -2,23 +2,41 @@
 <Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
   <Header>
     <Version>3.5.14.0</Version>
-    <SymbolConfigObject version="4.6.1.0" runtimeid="3.5.21.30" libversion="4.6.0.0" compiler="3.5.21.30" lmm="3.5.21.30" profile="CODESYS V3.5 SP21 Patch 3+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <SymbolConfigObject version="4.7.0.0" runtimeid="3.5.21.40" libversion="4.6.0.0" compiler="3.5.21.40" lmm="3.5.22.10" profile="CODESYS V3.5 SP22 Patch 1+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
     <ProjectInfo name="object_counter_io" devicename="Device" appname="Application" />
   </Header>
   <TypeList>
     <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
     <TypeSimple name="T_WORD" size="2" swapsize="2" typeclass="Word" iecname="WORD" />
+    <TypeUserDef name="T_CTU" size="8" nativesize="24" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="CTU">
+      <UserDefElement iecname="CU" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" access="ReadWrite" />
+      <UserDefElement iecname="RESET" type="T_BOOL" byteoffset="1" vartype="VAR_INPUT" access="ReadWrite" />
+      <UserDefElement iecname="PV" type="T_WORD" byteoffset="2" vartype="VAR_INPUT" access="ReadWrite" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="4" vartype="VAR_OUTPUT" access="ReadWrite" />
+      <UserDefElement iecname="CV" type="T_WORD" byteoffset="6" vartype="VAR_OUTPUT" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_F_TRIG" size="2" nativesize="16" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="F_TRIG">
+      <UserDefElement iecname="CLK" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" access="ReadWrite" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="1" vartype="VAR_OUTPUT" access="ReadWrite" />
+    </TypeUserDef>
   </TypeList>
   <NodeList>
     <Node name="Application">
       <Node name="IO">
+        <Node name="Conveyer" type="T_BOOL" access="ReadWrite" />
         <Node name="CV" type="T_WORD" access="ReadWrite" />
+        <Node name="CycleOFF" type="T_BOOL" access="ReadWrite" />
         <Node name="CycleON" type="T_BOOL" access="ReadWrite" />
+        <Node name="EStopPB" type="T_BOOL" access="ReadWrite" />
         <Node name="PV" type="T_WORD" access="ReadWrite" />
         <Node name="ResetPB" type="T_BOOL" access="ReadWrite" />
         <Node name="Sensor" type="T_BOOL" access="ReadWrite" />
+        <Node name="SensorFall" type="T_BOOL" access="ReadWrite" />
         <Node name="StartPB" type="T_BOOL" access="ReadWrite" />
-        <Node name="StopPB" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="PLC_PRG">
+        <Node name="CTU_0" type="T_CTU" access="ReadWrite" />
+        <Node name="TRIGGER" type="T_F_TRIG" access="ReadWrite" />
       </Node>
     </Node>
   </NodeList>
